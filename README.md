@@ -1,6 +1,8 @@
 # Angular-testing
 <p>Respositorio con mini proyectos de angular, para ir aprendiendo.</p>
+
 <h1>Una pequeñísima introducción</h1>
+
 <p>Antes de empezar, cabe destacar que Angular usa TypeScript. Esta paltaforma de desarrollo incluye un framework para construir aplicaciones web, junto a una colección de librerías que cubren algunas características tales como routing, manejo de formularios, comunicación cliente-servidor... Para ello, Angular usa componentes como los bloques de construcciónque componen una aplicación. Este componente incluye una clase de TypeScript con un <code>@Component()</code>, un template de HTML, y estilos. Por otra parte, aquí se va a utilizar Angular CLI, una herramienta que ayuda a construir aplicaciones en este framework. Algunos comandos son:</p>
   <ul>
     <li><code>ng build</code> - compila una aplicación Angular dentro de un directorio de salida.</li>
@@ -15,7 +17,9 @@
     <li>Tutorial de Angular para crear un proyecto básico: <a href="https://angular.io/start">https://angular.io/start</a></li>
     <li>Tutorial de este pequeño proyecto: <a href="https://www.udemy.com/course/angular-free-masterclass-part-one/learn/lecture/32560170#overview">https://www.udemy.com/course/angular-free-masterclass-part-one/learn/lecture/32560170#overview</a></li>
   </ul>
+  
 <h1>Setup de Angular</h1>
+
 <h2>Primero: instalación de Angular</h2>
     <li>Nos vamos a la página de <a href="https://nodejs.org/en/">https://nodejs.org/en/</a> y descargamos la opción recomendada de la página.</li>
     <li>Insertamos en la consola que se nos ha creado nueva, el siguiente código en cmd: <code>npm install -g @angular/cli</code>. Podemos comprobar la versión ejecutando el comando <code>ng version</code> en la terminal.</li>
@@ -45,11 +49,37 @@
     <li>Modificando <i>angular.json</i> y <i>"scripts"</i>: para Bootstrap, también necesitamos incluir su módulo de JS. Entonces dentro de <i>"scripts": []</i>, generaremos la siguiente línea de código: <code>"node_modules/bootstrap/dist/js/bootstrap.min.js"</code>.</li>
     <li>Ejemplo de icono: podemos crear una etiqueta donde genere un icono de Facebook, para probar si funcionan los nuevos módulos. El código es: <code>&lt;i class=""fas fa-facebook"&gt;&lt;i&gt;</code>.</li>
   </ol>
+  
 <h1>Módulos, Componentes y Templates</h1>
-<h2></h2>
+
+<h2>Creando módulos compartidos y componentes</h2>
+<p>En primer lugar, crearemos nuestro módulo compartido. Para ello, en la terminal escribiremos el siguiente código: <code>ng g m [name of module]</code>. Esto equivale a Generate, Module, Component y Services. Como queremos crear un módulo compartido, lo podemos llamar "shared".</p>
+<p>Ahora, en la carpeta <b>shared</b> del proyecto, tendremos nuestro módulo recién creado. Se llamará <i>shared.module.ts</i>. Ahora, para poder usarlo, necesitamos escribir en el archivo <i>app.module.ts</i>la importación de dicho módulo. Hay que escribirlo en la línea de <code>imports: [ ]</code>, escribiendo para ello el nombre del módulo: <b>SharedModule</b>. Automáticamente, se generará una línea nueva con el nombre del módulo en la línea 6 de <code>import { }</code>. Además, también se generarán las líneas necesarias en <i>main.ts</i> para que pueda compilar JavaScript en TypeScript.</p>
+<p>Ahora, hay que generar el componente compartido. Para ello, en la terminal escribiremos <code>ng g c shared/components/sidebar</code>, dentro de la carpeta que queremos compartir (<i>shared</i>). Ahora, Angular generará el HTML, CSS y JavaScript para ese componente junto a tests. Haremos lo mismo para la barra superior, indicando en la terminal el código <code>ng g c shared/components/topbar</code>.</p>
+<p>Los nuevos componentes estarán creados en la carpeta <i>shared/components</i>, cada uno con su respectiva carpeta.</p>
+<h3>Usando los neuvos componentes</h3>
+<p>Para comenzar a usar los nuevos componentes, tan solo hay que mirar el nombre de cada uno en su archivo <b>topbar.components.ts</b>, en la línea 4 donde pone <i>selector: 'app-topbar'</i>. Este nombre se usará como una etiqueta html dentro de nuestro archivo <b>app.component.html</b>. Las etiquetas quedarían así:</p>
+<br>
+<code>&lt;app-topbar&gt;&lt/app-topbar&gt;</code>
+<br>
+<code>&lt;app-sidebar&gt;&lt/app-sidebar&gt;</code>
+<h3>Errores</h3>
+<p>Una vez introducidas las anteriores etiquetas, encontraremos un error, ya que no están reconocidos como un componente de Angular. Para arreglar este error, hay que volver a <i>shared.module.ts</i> para copiar las declaraciones de "SideBarComponent" y de "TopBarComponent" en exports: [ ]. </p>
+
+<h2>Creando una Marca de Agua para la barra lateral (sidebar)</h2>
+<h2>Estilizando la barra lateral (sidebar)</h2>
+<h2>Creando una barra superior (topbar)</h2>
+<h2>Creando páginas y layout</h2>
+
 <h1>Routing, Rutas y Lazy Loading</h1>
-<h2></h2>
+<h2>Creando Rutas (route)</h2>
+<h2>Routing</h2>
+
 <h1>Trabajando con Datos</h1>
-<h2></h2>
+<h2>Yendo a través de la API</h2>
+<h2>Consiguiendo los datos resumen</h2>
+<h2>Pasando datos a un Componente</h2>
+<h2>Creando las tarjetas resumen</h2>
+
 <h1>Fin del mini proyecto...</h1>
 <h2></h2>
