@@ -57,9 +57,8 @@
 <p>Ahora, en la carpeta <b>shared</b> del proyecto, tendremos nuestro módulo recién creado. Se llamará <i>shared.module.ts</i>. Ahora, para poder usarlo, necesitamos escribir en el archivo <i>app.module.ts</i>la importación de dicho módulo. Hay que escribirlo en la línea de <code>imports: [ ]</code>, escribiendo para ello el nombre del módulo: <b>SharedModule</b>. Automáticamente, se generará una línea nueva con el nombre del módulo en la línea 6 de <code>import { }</code>. Además, también se generarán las líneas necesarias en <i>main.ts</i> para que pueda compilar JavaScript en TypeScript.</p>
 <p>Ahora, hay que generar el componente compartido. Para ello, en la terminal escribiremos <code>ng g c shared/components/sidebar</code>, dentro de la carpeta que queremos compartir (<i>shared</i>). Ahora, Angular generará el HTML, CSS y JavaScript para ese componente junto a tests. Haremos lo mismo para la barra superior, indicando en la terminal el código <code>ng g c shared/components/topbar</code>.</p>
 <p>Los nuevos componentes estarán creados en la carpeta <i>shared/components</i>, cada uno con su respectiva carpeta.</p>
-<h3>Usando los neuvos componentes</h3>
+<h3>Usando los nuevos componentes</h3>
 <p>Para comenzar a usar los nuevos componentes, tan solo hay que mirar el nombre de cada uno en su archivo <b>topbar.components.ts</b>, en la línea 4 donde pone <i>selector: 'app-topbar'</i>. Este nombre se usará como una etiqueta html dentro de nuestro archivo <b>app.component.html</b>. Las etiquetas quedarían así:</p>
-<br>
 <code>&lt;app-topbar&gt;&lt/app-topbar&gt;</code>
 <br>
 <code>&lt;app-sidebar&gt;&lt/app-sidebar&gt;</code>
